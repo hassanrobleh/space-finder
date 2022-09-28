@@ -1,0 +1,13 @@
+- initialize GitHub project and checkout locally -optional
+-npm init -y
+-npm i -D aws-cdk aws-cdk-lib constructs ts-node typescript
+-cdk.json
+{
+
+}
+
+en cas de probleme de deploiement de lambda, installe le paquet = 'sudo npm i -g aws-cdk@2.0.0-rc.1
+
+20. Basic aws lambda
+21. aws api gateway and lambda
+22. aws DynamoDB with CDK
