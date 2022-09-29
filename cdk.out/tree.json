@@ -143,7 +143,7 @@
                           "Ref": "SpaceApi1B373D2B"
                         },
                         "deploymentId": {
-                          "Ref": "SpaceApiDeploymentA2B9E765bd3204b13334f034b0b6da16f7d48dcb"
+                          "Ref": "SpaceApiDeploymentA2B9E765286490254b8d909ff2fc892ce17bd467"
                         },
                         "stageName": "prod"
                       }
@@ -211,7 +211,7 @@
                                 "action": "lambda:InvokeFunction",
                                 "functionName": {
                                   "Fn::GetAtt": [
-                                    "helloLambda79DCE371",
+                                    "hLambdaNodejs91AD2267",
                                     "Arn"
                                   ]
                                 },
@@ -260,7 +260,7 @@
                                 "action": "lambda:InvokeFunction",
                                 "functionName": {
                                   "Fn::GetAtt": [
-                                    "helloLambda79DCE371",
+                                    "hLambdaNodejs91AD2267",
                                     "Arn"
                                   ]
                                 },
@@ -327,7 +327,7 @@
                                         ":lambda:path/2015-03-31/functions/",
                                         {
                                           "Fn::GetAtt": [
-                                            "helloLambda79DCE371",
+                                            "hLambdaNodejs91AD2267",
                                             "Arn"
                                           ]
                                         },
@@ -574,6 +574,45 @@
                       "fqn": "aws-cdk-lib.aws_iam.CfnRole",
                       "version": "2.43.1"
                     }
+                  },
+                  "DefaultPolicy": {
+                    "id": "DefaultPolicy",
+                    "path": "space-finder/hLambdaNodejs/ServiceRole/DefaultPolicy",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "space-finder/hLambdaNodejs/ServiceRole/DefaultPolicy/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                          "aws:cdk:cloudformation:props": {
+                            "policyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "s3:ListAllMyBuckets",
+                                  "Effect": "Allow",
+                                  "Resource": "*"
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "policyName": "hLambdaNodejsServiceRoleDefaultPolicy9E766364",
+                            "roles": [
+                              {
+                                "Ref": "hLambdaNodejsServiceRole1A54313B"
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                          "version": "2.43.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Policy",
+                      "version": "2.43.1"
+                    }
                   }
                 },
                 "constructInfo": {
@@ -617,7 +656,7 @@
                       "s3Bucket": {
                         "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
                       },
-                      "s3Key": "2339f76159967a082a6ec7b2ccc8d85adbeeb01919cc5a49f8afe48598c73797.zip"
+                      "s3Key": "3770191ce2bc9e3b24c7925685a53564d4adcec32bbeb2858dbc3d8c27ebe7e1.zip"
                     },
                     "role": {
                       "Fn::GetAtt": [
